@@ -1,3 +1,5 @@
+import './index.scss';
+
 const myObject = {
   first: "1",
   senond: "2",
