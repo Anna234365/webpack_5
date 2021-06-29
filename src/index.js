@@ -4,4 +4,10 @@ const myObject = {
   third: "3"
 }
 
-console.log(myObject);
+const myNewObj = {
+  ...myObject,
+  forth: "4",
+  fifth: "6"
+}
+
+console.log(myNewObj)
