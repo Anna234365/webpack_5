@@ -11,8 +11,16 @@ module.exports = {
   mode: mode,
   target: target,
 
+  output: {
+    assetModuleFilename: "images/[hash][ext]",
+  },
+
   module: {
     rules: [
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: "asset/resource"
+      },
       {
         test: /.\js$/,
         exclude: /node_modules/,
@@ -22,7 +30,14 @@ module.exports = {
       },
       {
         test: /\.(s[ac]|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: "" },
+          },
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"]
       }
     ],
   },

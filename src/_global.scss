@@ -1,7 +1,8 @@
 @use "variables";
 
 body {
-  background-color: variables.$bg;
+  background-image: url('./kitty.jpg');
+  background: cover;
   font-size: var(--text);
   display: flex;
   flex-direction: column;
